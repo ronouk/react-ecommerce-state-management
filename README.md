@@ -2,7 +2,7 @@ Live site:
 
 Netlify: [https://ecommerce-state-management.netlify.app/](https://ecommerce-state-management.netlify.app/ "Live in Netlify")
 
-Surge:[ ecommerce-state-management.surge.sh](ecommerce-state-management.surge.sh "Live in Surge")
+Surge:[https://ecommerce-state-management.surge.sh](https://ecommerce-state-management.surge.sh "Live in Surge")
 
 # React + Vite
 
