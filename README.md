@@ -1,3 +1,9 @@
+Live site:
+
+Netlify: [https://ecommerce-state-management.netlify.app/](https://ecommerce-state-management.netlify.app/ "Live in Netlify")
+
+Surge:[ ecommerce-state-management.surge.sh](ecommerce-state-management.surge.sh "Live in Surge")
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
