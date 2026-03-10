@@ -43,10 +43,21 @@ function App() {
     console.log(updatedProductsToCart)
 
     isAlreadyInCart ?
-      toast(<span className='text-red-600'>Product removed</span>, {autoClose: 150})
+      toast(<span className='text-red-600'>Product removed</span>, {autoClose: 130})
       :
-      toast(<span className='text-green-700'>Product added</span>, {autoClose: 150});
+      toast(<span className='text-green-700'>Product added</span>, {autoClose: 130});
 
+  }
+
+  // remove from cart using remove button
+
+  const removeFromCart = (singleProduct) =>{
+    console.log("item removed", singleProduct)
+
+    const newProductInCart = productsInCart.filter(product => product.id !== singleProduct.id)
+    setProductsInCart(newProductInCart);
+
+    setCartCounter(newProductInCart.length)
   }
 
   // fetch the products data
@@ -99,6 +110,7 @@ function App() {
             :
             <Cart
               productsInCart={productsInCart}
+              removeFromCart = {removeFromCart}
             ></Cart>
         }
 

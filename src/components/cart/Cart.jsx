@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import CartItem from './CartItem';
-import { MoveRight } from 'lucide-react';
+import { BaggageClaim, MoveRight } from 'lucide-react';
 
 
-const Cart = ({ productsInCart }) => {
+const Cart = ({ productsInCart, removeFromCart }) => {
     // console.log(productsInCart)
 
     const [couponCode, setCouponCode] = useState("");
@@ -28,18 +28,36 @@ const Cart = ({ productsInCart }) => {
 
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
-            <div className='space-y-5'>
-                <div className='flex justify-between py-5 border-b border-gray-800 uppercase text-gray-400 text-lg'>
-                    <p>Item</p>
-                    <p>Price</p>
-                </div>
-                <div className='flex flex-col gap-5'>
-                    {productsInCart.map(singleProduct => <CartItem
-                        singleProduct={singleProduct}
-                        key={singleProduct.id}
-                    ></CartItem>)}
-                </div>
+
+            <div>
+                {
+                    productsInCart.length ?
+                        <div className='space-y-5'>
+                            <div className='flex justify-between py-5 border-b border-gray-800 uppercase text-gray-400 text-lg'>
+                                <p>Item</p>
+                                <p>Price</p>
+                            </div>
+                            <div className='flex flex-col gap-5'>
+                                {productsInCart.map(singleProduct => <CartItem
+                                    singleProduct={singleProduct}
+                                    key={singleProduct.id}
+                                    removeFromCart={removeFromCart}
+                                ></CartItem>)}
+                            </div>
+                        </div>
+
+                        :
+
+                        <div className='flex flex-col items-center gap-2 text-xl'>
+                            <BaggageClaim size={116} color="#545454" />
+                            <p className='text-white'>Your cart is empty</p>
+                            <p className='text-gray-400'>Head over to Products and add something!</p>
+                        </div>
+
+                }
+
             </div>
+
             <div className='text-gray-400 border p-5 rounded-2xl border-gray-800 space-y-6'>
                 <h2 className='text-2xl text-white border-b pb-3 border-gray-800'>Order Summary</h2>
                 <div className='border-b border-gray-800 pb-3 space-y-2'>
@@ -49,7 +67,7 @@ const Cart = ({ productsInCart }) => {
                     </div>
                     <div className='flex justify-between text-lg'>
                         <p>Shipping</p>
-                        <p>$ {shippingPrice}</p>
+                        <p>{productsInCart.length ? `$ ${shippingPrice}` : "-"}</p>
                     </div>
 
                     {/* discount section */}

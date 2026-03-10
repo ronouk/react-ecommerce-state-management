@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartItem = ({ singleProduct }) => {
+const CartItem = ({ singleProduct, removeFromCart }) => {
 
     const { thumbnail, title, price, category } = singleProduct;
     return (
@@ -18,7 +18,7 @@ const CartItem = ({ singleProduct }) => {
                 <div>1</div>
                 <div className='text-center'>
                     <p className='font-semibold text-white text-lg'>${price}</p>
-                    <button className='border border-transparent hover:border-red-400 px-2 rounded-md hover:text-red-400 transition'>Remove</button>
+                    <button onClick={() => removeFromCart(singleProduct)} className='px-2 rounded-md border border-transparent hover:border-red-400 hover:text-red-400 active:border-red-400 active:text-red-400 transition'>Remove</button>
                 </div>
             </div>
         </div>
