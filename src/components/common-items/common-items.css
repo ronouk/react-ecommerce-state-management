@@ -1,0 +1,10 @@
+.common-item h1{
+    color: #E8FF47;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.common-item p{
+    color: gray;
+    font-size: 1.2rem;
+}

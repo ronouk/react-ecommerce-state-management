@@ -1,0 +1,21 @@
+.menu-button button{
+    background-color: gray;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+
+.menu-button.active{
+    background-color: #E8FF47;
+    color: black;
+    transition: all;
+    transition-duration: 200ms;
+}
+.menu-logo{
+  /* font-size: 2rem; */
+  font-weight: bold;
+  color: #E8FF47;
+  text-transform: uppercase;
+}
